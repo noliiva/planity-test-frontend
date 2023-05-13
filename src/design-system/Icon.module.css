@@ -1,0 +1,20 @@
+/* Sizes */
+.icon {
+  width: auto;
+}
+
+.iconXSmall {
+  height: var(--icon-size-xs);
+}
+
+.iconSmall {
+  height: var(--icon-size-s);
+}
+
+.iconMedium {
+  height: var(--icon-size-m);
+}
+
+.iconLarge {
+  height: var(--icon-size-l);
+}

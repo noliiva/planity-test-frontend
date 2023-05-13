@@ -1,0 +1,54 @@
+:root {
+  /* Base colors */
+  --white: #fff;
+
+  --grey100: #f6f7f8;
+  --grey200: #eceeed;
+  --grey400: #bfc5c3;
+  --grey600: #98a29f;
+  --grey700: #7f8c88;
+  --grey800: #5f706a;
+  --grey900: #34423e;
+
+  --red500: #f56565;
+
+  --green500: #48bb78;
+
+  /* Calendar colors */
+  --blue100: #63b3ed;
+  --blue500: #2c5282;
+
+  /* Typography */
+  --font-size-s: 12px;
+  --font-size-m: 13px;
+  --font-size-l: 15px;
+
+  --font-weight-m: 400;
+  --font-weight-l: 600;
+
+  --line-height-m: 16px;
+  --line-height-l: 20px;
+  --line-height-xl: 24px;
+
+  --base-font-family: "Open Sans", sans-serif;
+
+  --base-font-s: var(--font-size-s) / var(--line-height-m)
+    var(--base-font-family);
+  --base-font-m: var(--font-size-m) / var(--line-height-m)
+    var(--base-font-family);
+  --base-font-l: var(--font-size-l) / var(--line-height-xl)
+    var(--base-font-family);
+
+  /* Icons */
+  --icon-size-xs: 12px;
+  --icon-size-s: 16px;
+  --icon-size-m: 20px;
+  --icon-size-l: 24px;
+
+  --radius-s: 6px;
+  --radius-m: 8px;
+  --radius-l: 12px;
+
+  /* Shadows */
+  --input-elevation-active: 0px 0px 5px 0px #48bb784d;
+}

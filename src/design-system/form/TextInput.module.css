@@ -1,0 +1,52 @@
+.textInput {
+  isolation: isolate;
+  position: relative;
+  height: 48px;
+
+  border: 1px solid var(--grey100);
+  border-radius: var(--radius-s);
+  color: var(--grey700);
+
+  span {
+    position: absolute;
+    z-index: 1;
+    top: 16px;
+    left: 10px;
+
+    transition: top 250ms ease, font-size 250ms ease;
+
+    color: var(--grey700);
+
+    pointer-events: none;
+  }
+
+  input {
+    position: absolute;
+    inset: 24px 10px 8px 10px;
+    padding: 0;
+    border: none;
+    color: var(--grey900);
+  }
+
+  input:is(:focus, :active) {
+    outline: none;
+  }
+
+  input:is(:focus, :active) + span,
+  input:not(:placeholder-shown) + span {
+    top: 6px;
+
+    font-size: var(--font-size-s);
+
+    pointer-events: initial;
+  }
+}
+
+.textInput:focus-within {
+  border-color: var(--green500);
+  box-shadow: var(--input-elevation-active);
+}
+
+.textInput[aria-disabled="true"] {
+  background-color: var(--grey100);
+}

@@ -1,0 +1,57 @@
+.input {
+  --padding-block: 8px;
+  --padding-inline: 10px;
+
+  isolation: isolate;
+  position: relative;
+  height: 48px;
+  padding: var(--padding-block) var(--padding-inline);
+
+  border: 1px solid var(--grey100);
+  border-radius: var(--radius-s);
+  color: var(--grey700);
+
+  span {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--grey700);
+
+    transition: all 250ms ease;
+    pointer-events: none;
+  }
+
+  input {
+    position: absolute;
+    inset: auto var(--padding-inline) var(--padding-block);
+    padding: 0;
+    border: none;
+    color: var(--grey900);
+    text-overflow: ellipsis;
+  }
+
+  input:is(:focus, :active) {
+    outline: none;
+  }
+
+  input:not(:disabled):is(:focus, :active) + span,
+  input:not(:disabled):not(:placeholder-shown) + span {
+    top: 6px;
+    transform: translateY(0);
+
+    font-size: var(--font-size-s);
+
+    pointer-events: initial;
+  }
+}
+
+.input:focus-within {
+  border-color: var(--green500);
+  box-shadow: var(--input-elevation-active);
+}
+
+.input[aria-disabled="true"] {
+  background-color: var(--grey100);
+}

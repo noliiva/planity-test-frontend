@@ -1,0 +1,9 @@
+.autoCompleteInput input {
+  right: 71px;
+}
+
+.autoCompleteInput button {
+  position: absolute;
+  inset: 0 10px 0 auto;
+  margin: auto;
+}

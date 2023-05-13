@@ -1,0 +1,129 @@
+.button {
+  height: 40px;
+  padding-inline: 9px;
+
+  background-color: transparent;
+  border: 1px solid var(--grey800);
+  border-radius: var(--radius-s);
+  color: var(--grey900);
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  line-height: var(--line-height-l);
+  font-weight: var(--font-weight-l);
+  white-space: nowrap;
+
+  svg {
+    height: var(--icon-size-m);
+  }
+}
+
+/* Colors */
+
+.buttonPrimary,
+.buttonSecondary,
+.buttonDanger {
+  color: var(--white);
+}
+
+.buttonPrimary {
+  background-color: var(--green500);
+  border-color: var(--green500);
+}
+
+.buttonSecondary {
+  background-color: var(--blue500);
+  border-color: var(--blue500);
+}
+
+.buttonDanger {
+  background-color: var(--red500);
+  border-color: var(--red500);
+}
+
+/* Shapes */
+
+.buttonDashed {
+  border-color: var(--grey600);
+  border-style: dashed;
+  color: var(--grey800);
+}
+
+.buttonGhost,
+.buttonDashed {
+  background-color: initial;
+
+  &.buttonPrimary {
+    color: var(--green500);
+  }
+
+  &.buttonSecondary {
+    color: var(--blue500);
+  }
+
+  &.buttonDanger {
+    color: var(--red500);
+  }
+}
+
+.buttonLink {
+  height: revert;
+  padding: 0;
+  border: 0;
+
+  background-color: initial;
+
+  line-height: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--grey800);
+  text-decoration-skip-ink: none;
+  text-underline-offset: 1px;
+
+  gap: 4px;
+
+  svg {
+    height: var(--icon-size-s);
+  }
+
+  &.buttonPrimary {
+    color: var(--green500);
+    text-decoration-color: var(--green500);
+  }
+
+  &.buttonSecondary {
+    color: var(--blue500);
+    text-decoration-color: var(--blue500);
+  }
+
+  &.buttonDanger {
+    color: var(--red500);
+    text-decoration-color: var(--red500);
+  }
+}
+
+/* Sizes */
+
+.buttonXSmall {
+  height: 32px;
+  padding-inline: 7px;
+}
+
+.buttonSmall {
+  height: 36px;
+  padding-inline: 9px;
+}
+
+.buttonLarge {
+  height: 48px;
+  padding-inline: 13px;
+}
+
+.buttonXLarge {
+  height: 56px;
+  padding-inline: 15px;
+}

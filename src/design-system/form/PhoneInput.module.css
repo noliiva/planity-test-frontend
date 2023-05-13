@@ -1,0 +1,23 @@
+.phoneInput select {
+  appearance: none;
+  width: 50px;
+  height: 100%;
+  padding: var(--padding-block) var(--padding-left);
+  padding-right: var(--padding-right);
+  border: 0;
+  background: none;
+  background-image: url("~/assets/icons/arrow_drop_down.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 4px) center;
+  background-size: var(--icon-width);
+  cursor: pointer;
+
+  &:is(:focus, :active) {
+    outline: none;
+  }
+}
+
+.phoneInput input {
+  inset: unset;
+  bottom: var(--padding-block);
+}

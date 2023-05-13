@@ -1,0 +1,125 @@
+.box {
+  width: min(1100px, 100vw - 2rem);
+  min-height: 742px;
+
+  background-color: var(--grey100);
+  border-radius: var(--radius-l);
+  overflow: hidden;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.boxHeader {
+  height: 52px;
+  padding-inline: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+
+  background-color: var(--white);
+  border-bottom: 1px solid var(--grey200);
+
+  h1 {
+    margin-right: auto;
+    font: var(--font-weight-l) var(--base-font-l);
+  }
+}
+
+.boxContent {
+  padding: 20px 28px;
+
+  display: grid;
+  align-content: start;
+  gap: 16px;
+
+  fieldset {
+    padding: 20px;
+
+    background-color: var(--white);
+    border: 0;
+    border-radius: var(--radius-m);
+
+    padding-left: 10px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  /* Visually hide legend, while keeping it accessible (a11y) */
+  fieldset > legend {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  fieldset > svg {
+    margin-right: -6px;
+    color: var(--grey700);
+  }
+}
+
+.clientFieldset {
+  label:first-of-type,
+  label:last-of-type {
+    flex: 1;
+  }
+
+  label:nth-of-type(2) {
+    width: 240px;
+  }
+}
+
+.additionnalActions {
+  display: flex;
+  gap: 16px;
+}
+
+.boxFooter {
+  height: 80px;
+  padding-inline: 28px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  border-top: 1px solid var(--grey200);
+
+  hr {
+    height: 36px;
+    width: 1px;
+
+    background-color: var(--grey200);
+    border: 0;
+  }
+
+  div {
+    display: flex;
+  }
+
+  div:first-of-type {
+    gap: 8px;
+
+    button {
+      padding-inline: 10px;
+    }
+  }
+
+  div:nth-of-type(2) {
+    gap: 20px;
+  }
+
+  div:last-child {
+    margin-left: auto;
+    gap: 12px;
+  }
+}
