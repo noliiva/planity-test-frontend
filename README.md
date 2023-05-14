@@ -26,7 +26,10 @@ You can see the live project here: https://demo.noliiva.com/
 
 - ### PostCSS
 
-  Lighter than Sass, as it's composable and allow some sugar syntax as nesting, imports, autoprefixing, etc.
+  Lighter than Sass, as it's composable and allow some sugar syntax as nesting but also imports, autoprefixing, etc.
+
+- ### date-fns
+  Light & simple lib to handle dates efficiently.
 
 # How to use
 
