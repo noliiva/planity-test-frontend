@@ -17,7 +17,7 @@ import { ReactComponent as InfoIcon } from "~/assets/icons/info.svg";
 import { ReactComponent as CopyIcon } from "~/assets/icons/content_copy.svg";
 import { ReactComponent as PersonIcon } from "~/assets/icons/person.svg";
 import { ReactComponent as CakeIcon } from "~/assets/icons/cake.svg";
-import { ReactComponent as CardMembershiprIcon } from "~/assets/icons/card_membership.svg";
+import { ReactComponent as CardMembershipIcon } from "~/assets/icons/card_membership.svg";
 
 import parentStyles from "./index.module.css";
 import styles from "./Client.module.css";
@@ -39,7 +39,7 @@ export default function Client() {
 
   return (
     <fieldset className={parentStyles.boxContentRow}>
-      <legend>Client</legend>
+      <legend className="visuallyHidden">Client</legend>
 
       <Icon className={styles.sectionIcon}>
         <AccountCircleIcon />
@@ -121,7 +121,7 @@ export default function Client() {
 
             <div className={parentStyles.boxContentRow}>
               <Icon small className={styles.icon}>
-                <CardMembershiprIcon />
+                <CardMembershipIcon />
               </Icon>
 
               <span className={styles.text}>

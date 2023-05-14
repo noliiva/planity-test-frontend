@@ -10,6 +10,7 @@ import { ReactComponent as DeleteIcon } from "~/assets/icons/delete.svg";
 import { ReactComponent as DescriptionIcon } from "~/assets/icons/description.svg";
 
 import parentStyles from "./index.module.css";
+import styles from "./Presta.module.css";
 
 type Props = {
   onDelete?: () => void;
@@ -41,14 +42,16 @@ export default function Presta({ onDelete }: Props) {
   };
 
   return (
-    <fieldset className={parentStyles.boxContentRow}>
-      <legend>Prestation</legend>
+    <fieldset className={`${parentStyles.boxContentRow} ${styles.presta}`}>
+      <legend className="visuallyHidden">Prestation</legend>
 
       <Icon>
         <DescriptionIcon />
       </Icon>
 
-      <div className={parentStyles.boxContentRow}>
+      <div
+        className={`${parentStyles.boxContentRow} ${styles.selectsContainer}`}
+      >
         <Select
           name="presta"
           primary

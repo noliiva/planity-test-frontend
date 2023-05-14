@@ -12,16 +12,16 @@ import styles from "./Footer.module.css";
 export default function Footer() {
   const { client } = useRDVContext();
 
-  const [choosed, setChoosed] = useState(false);
+  const [chosen, setChosen] = useState(false);
   const [showUp, setShowUp] = useState<boolean | undefined>();
 
   return (
     <footer className={styles.footer}>
       <div>
         <Button
-          link={!choosed}
-          primary={choosed}
-          onClick={() => setChoosed((v) => !v)}
+          link={!chosen}
+          primary={chosen}
+          onClick={() => setChosen((v) => !v)}
         >
           Choisi(e)
         </Button>
@@ -35,7 +35,7 @@ export default function Footer() {
         </Button>
 
         <Button
-          link={showUp === undefined || showUp === true}
+          link={showUp || showUp === undefined}
           danger={showUp === false}
           onClick={() => setShowUp(false)}
         >

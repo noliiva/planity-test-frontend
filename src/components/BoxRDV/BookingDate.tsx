@@ -18,7 +18,7 @@ export default function BookingDate() {
 
   return (
     <fieldset className={parentStyles.boxContentRow}>
-      <legend>Date du rendez-vous</legend>
+      <legend className="visuallyHidden">Date du rendez-vous</legend>
 
       <Icon>
         <CalendarIcon />

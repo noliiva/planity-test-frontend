@@ -1,0 +1,8 @@
+.presta > *:not(svg) {
+  align-self: flex-end;
+}
+
+.selectsContainer {
+  flex-basis: 50%;
+  flex-wrap: wrap;
+}

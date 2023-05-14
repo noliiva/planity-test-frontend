@@ -26,3 +26,17 @@ em {
   text-underline-offset: 1px;
   color: var(--grey900);
 }
+
+/* Visually hide element, while keeping it accessible (a11y) */
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  overflow: hidden;
+}

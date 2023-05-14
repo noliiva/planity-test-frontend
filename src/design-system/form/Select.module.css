@@ -64,6 +64,7 @@
 
   output {
     visibility: hidden;
+    white-space: nowrap;
   }
 }
 

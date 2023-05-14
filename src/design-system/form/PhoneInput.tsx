@@ -89,6 +89,7 @@ export default function PhoneInput({
           {phoneCodes.map((phoneCode) => (
             <label key={phoneCode.key}>
               <input
+                className="visuallyHidden"
                 name="countryCode"
                 type="radio"
                 value={phoneCode.key}

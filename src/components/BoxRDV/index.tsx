@@ -64,7 +64,7 @@ function BoxRDV() {
           Ajouter une prestation à la suite
         </Button>
 
-        <div className={styles.additionnalActions}>
+        <div className={styles.additionalActions}>
           <Button link icon={<DescriptionIcon />}>
             Ajouter un titre
           </Button>

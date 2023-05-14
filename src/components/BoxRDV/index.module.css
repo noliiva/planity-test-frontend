@@ -45,20 +45,6 @@
     border-radius: var(--radius-m);
   }
 
-  /* Visually hide legend, while keeping it accessible (a11y) */
-  & > fieldset > legend {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    clip: rect(0 0 0 0);
-    clip-path: inset(50%);
-    white-space: nowrap;
-    overflow: hidden;
-  }
-
   & > fieldset > svg {
     margin-right: -6px;
     color: var(--grey700);
@@ -71,7 +57,7 @@
   gap: 16px;
 }
 
-.additionnalActions {
+.additionalActions {
   display: flex;
   gap: 16px;
 }

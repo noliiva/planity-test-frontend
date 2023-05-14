@@ -3,17 +3,16 @@ import type { InputHTMLAttributes } from "react";
 import baseStyles from "./BaseInput.module.css";
 import styles from "./RadioGroup.module.css";
 
-type Without<T, K> = Pick<T, Exclude<keyof T, K>>;
 type Props = Without<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> & {
   name: string;
   options: { value: string; label: string }[];
-  defautValue?: string;
+  defaultValue?: string;
 };
 
 export default function RadioGroup({
   disabled,
   options,
-  defautValue,
+  defaultValue,
   className,
   ...props
 }: Props) {
@@ -26,10 +25,11 @@ export default function RadioGroup({
       {options.map(({ value, label }, index) => (
         <label key={value}>
           <input
+            className="visuallyHidden"
             type="radio"
             value={value}
             disabled={disabled}
-            defaultChecked={defautValue === value || index === 0}
+            defaultChecked={defaultValue === value || index === 0}
             {...props}
           />
           <span>{label}</span>

@@ -1,12 +1,12 @@
 import { createContext, useContext, useState, useMemo } from "react";
 import type { PropsWithChildren, Dispatch, SetStateAction } from "react";
 
-type Value = null | {
+type Value = {
   client?: string;
   handleClientChange: Dispatch<SetStateAction<string>>;
 };
 
-const RDVContext = createContext<Value>(null);
+const RDVContext = createContext<Value | null>(null);
 export const useRDVContext = () => useContext(RDVContext);
 
 export function RDVProvider({ children }: PropsWithChildren) {
