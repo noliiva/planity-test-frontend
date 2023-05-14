@@ -4,7 +4,7 @@ Integration of Box RDV component for Planity's job interview.
 
 # Demo
 
-You can see the live project here: https://demo.noliiva.com/
+You can see the live project here: https://box-rdv.noliiva.com/
 
 # Technical stack
 
