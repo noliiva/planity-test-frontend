@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type { ChangeEvent } from "react";
 
 import { format, parse } from "date-fns";
@@ -28,6 +28,8 @@ export default function DatePicker({
   defaultValue = new Date(),
   ...props
 }: Props) {
+  const ref = useRef<HTMLInputElement>(null);
+
   const classes = [baseStyles.input, styles.datePicker, className]
     .filter((c) => !!c)
     .join(" ");
@@ -35,6 +37,14 @@ export default function DatePicker({
   const [formatedDate, setFormatedDate] = useState(
     formatDate(value ?? defaultValue)
   );
+
+  const handleClick = () => {
+    if (disabled) return;
+
+    if (ref.current) {
+      ref.current.showPicker();
+    }
+  };
 
   const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (onChange) onChange(e);
@@ -50,12 +60,15 @@ export default function DatePicker({
   };
 
   return (
-    <label className={classes} aria-disabled={disabled}>
+    <label className={classes} aria-disabled={disabled} onClick={handleClick}>
       <span>{formatedDate}</span>
       <input
+        ref={ref}
+        className="visuallyHidden"
         type="date"
         disabled={disabled}
         onInput={handleChange}
+        min={format(defaultValue, inputDateFormat)}
         defaultValue={defaultValue && format(defaultValue, inputDateFormat)}
         value={value && format(value, inputDateFormat)}
         {...props}

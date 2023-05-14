@@ -5,6 +5,7 @@
   grid-auto-columns: 100px;
   justify-content: space-evenly;
   gap: 0;
+  overflow: hidden;
 
   label {
     cursor: pointer;
