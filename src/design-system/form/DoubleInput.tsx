@@ -3,9 +3,13 @@ import type { InputHTMLAttributes } from "react";
 import baseStyles from "./BaseInput.module.css";
 import styles from "./DoubleInput.module.css";
 
-type Props = Without<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> & {
+type Props = Omit<
+  InputHTMLAttributes<HTMLInputElement>,
+  "defaultValue" | "value" | "name"
+> & {
   names: [string, string];
   defaultValues?: [string, string];
+  values?: [string, string];
 };
 
 export default function DoubleInput({
@@ -26,8 +30,8 @@ export default function DoubleInput({
           type="text"
           disabled={disabled}
           defaultValue={defaultValues?.[0]}
-          {...props}
           name={names[0]}
+          {...props}
         />
       </label>
 
@@ -36,8 +40,8 @@ export default function DoubleInput({
           type="text"
           disabled={disabled}
           defaultValue={defaultValues?.[1]}
-          {...props}
           name={names[1]}
+          {...props}
         />
       </label>
     </div>

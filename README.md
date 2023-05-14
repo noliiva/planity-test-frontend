@@ -18,35 +18,40 @@ You can see the live project here: https://demo.noliiva.com/
 
 - ### React
 
-  My favorite "framework" for frontend application.
+  My favorite "framework" for frontend applications.
 
 - ### CSS Modules
 
-  Allow to scope styles to prevent classes conflicts.
+  Allow scoping styles to prevent class conflicts.
 
 - ### PostCSS
 
   Lighter than Sass, as it's composable and allow some sugar syntax as nesting, imports, autoprefixing, etc.
-  
+
 # How to use
 
 ### Install project
+
 ```bash
 npm install
 ```
 
 ### Run development environment
+
 ```bash
 npm run dev
 ```
 
 ### Run production environment
+
 ```bash
 npm run preview
 ```
 
 ### Build project
-Sources will be in `/dist` folder
+
+Sources will be in the `/dist` folder
+
 ```bash
 npm run build
 ```

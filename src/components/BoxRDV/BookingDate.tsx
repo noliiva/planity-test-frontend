@@ -5,7 +5,7 @@ import Button from "~/design-system/Button";
 import Icon from "~/design-system/Icon";
 import Checkbox from "~/design-system/form/Checkbox";
 import DoubleInput from "~/design-system/form/DoubleInput";
-import TextInput from "~/design-system/form/TextInput";
+import DatePicker from "~/design-system/form/DatePicker";
 
 import { ReactComponent as CalendarIcon } from "~/assets/icons/calendar_today.svg";
 import { ReactComponent as SyncIcon } from "~/assets/icons/sync.svg";
@@ -24,11 +24,7 @@ export default function BookingDate() {
         <CalendarIcon />
       </Icon>
 
-      <TextInput
-        name="date"
-        defaultValue="Lundi 21 mars"
-        className={styles.dateInput}
-      />
+      <DatePicker name="date" className={styles.dateInput} />
 
       {!isFullDay && (
         <>

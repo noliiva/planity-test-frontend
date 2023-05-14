@@ -3,10 +3,9 @@ import type { InputHTMLAttributes } from "react";
 import baseStyles from "./BaseInput.module.css";
 import styles from "./RadioGroup.module.css";
 
-type Props = Without<InputHTMLAttributes<HTMLInputElement>, "defaultValue"> & {
+type Props = InputHTMLAttributes<HTMLInputElement> & {
   name: string;
   options: { value: string; label: string }[];
-  defaultValue?: string;
 };
 
 export default function RadioGroup({
