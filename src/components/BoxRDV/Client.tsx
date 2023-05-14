@@ -25,6 +25,7 @@ import styles from "./Client.module.css";
 export default function Client() {
   const { client: defaultValue, handleClientChange } = useRDVContext();
 
+  const [resetKey, setResetKey] = useState(Date.now());
   const [client, setClient] = useState(defaultValue);
   const [infoInputVisible, setInfoInputVisible] = useState(false);
 
@@ -35,10 +36,14 @@ export default function Client() {
     handleClientChange(value);
   };
 
-  const completed = false;
+  const handleReset = () => {
+    setResetKey(Date.now());
+    setClient("");
+    handleClientChange("");
+  };
 
   return (
-    <fieldset className={parentStyles.boxContentRow}>
+    <fieldset key={resetKey} className={parentStyles.boxContentRow}>
       <legend className="visuallyHidden">Client</legend>
 
       <Icon className={styles.sectionIcon}>
@@ -63,8 +68,8 @@ export default function Client() {
 
           <TextInput label="Email" name="email" disabled={!client} />
 
-          {completed && (
-            <Button large>
+          {client && (
+            <Button large onClick={handleReset}>
               <DeleteIcon />
             </Button>
           )}

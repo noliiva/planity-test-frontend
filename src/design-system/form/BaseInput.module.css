@@ -6,7 +6,6 @@
   position: relative;
   height: 48px;
   padding: var(--padding-block) var(--padding-inline);
-  overflow: hidden;
 
   border: 1px solid var(--grey200);
   border-radius: var(--radius-s);
@@ -77,6 +76,7 @@
   margin-right: calc(-1 * var(--padding-inline));
 
   border-left: 1px solid var(--grey200);
+  border-radius: 0 var(--radius-s) var(--radius-s) 0;
   background-color: var(--grey000);
   color: var(--grey900);
 

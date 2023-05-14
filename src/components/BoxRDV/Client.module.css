@@ -5,7 +5,7 @@
 
 .baseInfoContainer {
   display: grid;
-  grid-template-columns: 1fr 240px 1fr;
+  grid-template-columns: 1fr 240px 1fr auto;
   gap: 16px;
 }
 
