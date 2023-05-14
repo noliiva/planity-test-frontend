@@ -16,3 +16,13 @@ body {
 strong {
   font-weight: var(--font-weight-l);
 }
+
+em {
+  font-weight: var(--font-weight-l);
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: var(--grey800);
+  text-decoration-skip-ink: none;
+  text-underline-offset: 1px;
+  color: var(--grey900);
+}

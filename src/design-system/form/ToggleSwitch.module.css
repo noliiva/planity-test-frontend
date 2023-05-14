@@ -1,0 +1,48 @@
+.toggleSwitch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  input {
+    position: relative;
+    appearance: none;
+    height: 20px;
+    width: 34px;
+    border-radius: 999px;
+    background-color: var(--grey400);
+    color: inherit;
+    cursor: inherit;
+  }
+
+  input::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 14px;
+    width: 14px;
+    margin-block: auto;
+    margin-inline: calc(100% - 17px) 3px;
+    border-radius: 50%;
+    background-color: var(--white);
+    transition: all 150ms;
+  }
+
+  input:checked {
+    background-color: var(--green500);
+
+    &::after {
+      margin-inline: 3px auto;
+    }
+  }
+
+  span {
+    font-weight: var(--font-weight-l);
+  }
+}
+
+.toggleSwitch[aria-disabled="true"] {
+  cursor: default;
+  color: var(--grey700);
+}

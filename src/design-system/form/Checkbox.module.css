@@ -1,0 +1,34 @@
+.checkbox {
+  display: flex;
+  gap: 4px;
+  white-space: nowrap;
+  cursor: pointer;
+
+  input {
+    appearance: none;
+    color: inherit;
+    cursor: inherit;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 16px;
+      background-color: currentColor;
+      mask-image: url("~/assets/icons/checkbox_blank.svg");
+    }
+
+    &:checked::before {
+      mask-image: url("~/assets/icons/checkbox_checked.svg");
+    }
+  }
+
+  span {
+    font-weight: var(--font-weight-l);
+  }
+}
+
+.checkbox[aria-disabled="true"] {
+  cursor: default;
+  color: var(--grey700);
+}

@@ -1,0 +1,19 @@
+.doubleInput {
+  padding: 0;
+  justify-content: space-evenly;
+  gap: 0;
+
+  label {
+    display: grid;
+    place-content: center;
+    padding: var(--padding-block) var(--padding-inline);
+  }
+
+  input {
+    text-align: center;
+  }
+
+  label + label {
+    border-left: 1px solid var(--grey200);
+  }
+}

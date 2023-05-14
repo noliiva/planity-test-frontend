@@ -1,0 +1,43 @@
+.radioGroup {
+  padding: 0;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100px;
+  justify-content: space-evenly;
+  gap: 0;
+
+  label {
+    cursor: pointer;
+  }
+
+  label + label {
+    border-left: 1px solid var(--grey200);
+  }
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  span {
+    height: 100%;
+    padding: var(--padding-block) var(--padding-inline);
+    color: var(--grey900);
+    text-align: center;
+    display: grid;
+    place-content: center;
+  }
+
+  input:not(:checked) + span {
+    background-color: var(--grey100);
+    color: var(--grey700);
+  }
+}

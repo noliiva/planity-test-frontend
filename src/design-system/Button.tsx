@@ -39,6 +39,7 @@ export default function Button({
   type = "button",
   className,
   children,
+  ...props
 }: Props) {
   const color =
     (primary && "buttonPrimary") ||
@@ -68,7 +69,7 @@ export default function Button({
     .join(" ");
 
   return (
-    <button type={type} className={classes}>
+    <button type={type} className={classes} {...props}>
       {icon && <Icon>{icon}</Icon>}
       {children}
     </button>

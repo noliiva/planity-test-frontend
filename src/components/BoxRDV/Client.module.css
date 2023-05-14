@@ -1,0 +1,33 @@
+.sectionIcon {
+  margin-top: 14px;
+  align-self: flex-start;
+}
+
+.baseInfoContainer {
+  display: grid;
+  grid-template-columns: 1fr 240px 1fr;
+  gap: 16px;
+}
+
+.container {
+  flex: 1;
+  display: grid;
+  gap: 16px;
+}
+
+.birthDateInput {
+  width: 216px;
+}
+
+.infoInput {
+  flex: 1;
+}
+
+.icon {
+  margin-right: -8px;
+  color: var(--grey800);
+}
+
+.text {
+  color: var(--grey800);
+}

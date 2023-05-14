@@ -9,7 +9,11 @@
   height: 48px;
   padding-inline: var(--padding-left) var(--padding-right);
 
-  border: 1px solid var(--grey100);
+  background-image: url("~/assets/icons/arrow_drop_down.svg");
+  background-repeat: no-repeat;
+  background-position: calc(100% - 4px) center;
+  background-size: var(--icon-width);
+  border: 1px solid var(--grey200);
   border-radius: var(--radius-s);
   color: var(--grey700);
 
@@ -18,13 +22,9 @@
     position: absolute;
     inset: 0;
     padding: var(--padding-block) var(--padding-left);
-    padding-right: var(--padding-right);
     border: 0;
     border-radius: var(--radius-s);
-    background-image: url("~/assets/icons/arrow_drop_down.svg");
-    background-repeat: no-repeat;
-    background-position: calc(100% - 4px) center;
-    background-size: var(--icon-width);
+    background-color: transparent;
     cursor: pointer;
   }
 

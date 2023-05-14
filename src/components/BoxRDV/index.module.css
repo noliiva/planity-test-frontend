@@ -35,21 +35,18 @@
   align-content: start;
   gap: 16px;
 
-  fieldset {
+  & > fieldset {
+    min-width: 0;
     padding: 20px;
+    padding-left: 10px;
 
     background-color: var(--white);
     border: 0;
     border-radius: var(--radius-m);
-
-    padding-left: 10px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
   }
 
   /* Visually hide legend, while keeping it accessible (a11y) */
-  fieldset > legend {
+  & > fieldset > legend {
     position: absolute;
     width: 1px;
     height: 1px;
@@ -62,64 +59,19 @@
     overflow: hidden;
   }
 
-  fieldset > svg {
+  & > fieldset > svg {
     margin-right: -6px;
     color: var(--grey700);
   }
 }
 
-.clientFieldset {
-  label:first-of-type,
-  label:last-of-type {
-    flex: 1;
-  }
-
-  label:nth-of-type(2) {
-    width: 240px;
-  }
+.boxContentRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .additionnalActions {
   display: flex;
   gap: 16px;
-}
-
-.boxFooter {
-  height: 80px;
-  padding-inline: 28px;
-
-  display: flex;
-  align-items: center;
-  gap: 16px;
-
-  border-top: 1px solid var(--grey200);
-
-  hr {
-    height: 36px;
-    width: 1px;
-
-    background-color: var(--grey200);
-    border: 0;
-  }
-
-  div {
-    display: flex;
-  }
-
-  div:first-of-type {
-    gap: 8px;
-
-    button {
-      padding-inline: 10px;
-    }
-  }
-
-  div:nth-of-type(2) {
-    gap: 20px;
-  }
-
-  div:last-child {
-    margin-left: auto;
-    gap: 12px;
-  }
 }

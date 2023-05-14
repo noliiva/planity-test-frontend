@@ -1,7 +1,9 @@
-/* Sizes */
 .icon {
+  display: inline-block;
   width: auto;
 }
+
+/* Sizes */
 
 .iconXSmall {
   height: var(--icon-size-xs);

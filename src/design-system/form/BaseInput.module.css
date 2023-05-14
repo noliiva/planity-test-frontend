@@ -1,32 +1,25 @@
 .input {
-  --padding-block: 8px;
-  --padding-inline: 10px;
+  --padding-block: 7px;
+  --padding-inline: 9px;
+  --label-active-position: -2px;
 
-  isolation: isolate;
   position: relative;
   height: 48px;
   padding: var(--padding-block) var(--padding-inline);
+  overflow: hidden;
 
-  border: 1px solid var(--grey100);
+  border: 1px solid var(--grey200);
   border-radius: var(--radius-s);
   color: var(--grey700);
 
-  span {
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-
-    color: var(--grey700);
-
-    transition: all 250ms ease;
-    pointer-events: none;
-  }
+  display: flex;
+  gap: 10px;
 
   input {
-    position: absolute;
-    inset: auto var(--padding-inline) var(--padding-block);
+    flex: 1;
+    min-width: 0;
     padding: 0;
+    background: none;
     border: none;
     color: var(--grey900);
     text-overflow: ellipsis;
@@ -34,16 +27,6 @@
 
   input:is(:focus, :active) {
     outline: none;
-  }
-
-  input:not(:disabled):is(:focus, :active) + span,
-  input:not(:disabled):not(:placeholder-shown) + span {
-    top: 6px;
-    transform: translateY(0);
-
-    font-size: var(--font-size-s);
-
-    pointer-events: initial;
   }
 }
 
@@ -53,5 +36,50 @@
 }
 
 .input[aria-disabled="true"] {
-  background-color: var(--grey100);
+  background-color: var(--grey200);
+}
+
+.inputInnerContainer {
+  position: relative;
+  flex: 1;
+  display: flex;
+
+  input {
+    align-self: flex-end;
+  }
+
+  span {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    color: var(--grey700);
+
+    pointer-events: none;
+    transition: all 150ms ease;
+  }
+
+  input:not(:disabled):is(:focus, :active) + span,
+  input:not(:disabled):not(:placeholder-shown) + span {
+    top: var(--label-active-position);
+    transform: translateY(0);
+
+    font-size: var(--font-size-s);
+
+    pointer-events: initial;
+  }
+}
+
+.inputSuffix {
+  min-width: 48px;
+  margin-block: calc(-1 * var(--padding-block));
+  margin-right: calc(-1 * var(--padding-inline));
+
+  border-left: 1px solid var(--grey200);
+  background-color: var(--grey000);
+  color: var(--grey900);
+
+  display: grid;
+  place-content: center;
 }

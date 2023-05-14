@@ -1,23 +1,74 @@
-.phoneInput select {
-  appearance: none;
-  width: 50px;
-  height: 100%;
-  padding: var(--padding-block) var(--padding-left);
-  padding-right: var(--padding-right);
-  border: 0;
-  background: none;
-  background-image: url("~/assets/icons/arrow_drop_down.svg");
-  background-repeat: no-repeat;
-  background-position: calc(100% - 4px) center;
-  background-size: var(--icon-width);
-  cursor: pointer;
+.phoneInput {
+  --label-active-position: 6px;
 
-  &:is(:focus, :active) {
-    outline: none;
+  padding: 0;
+  gap: 4px;
+
+  & > label {
+    padding-block: var(--padding-block);
+    padding-right: var(--padding-inline);
   }
 }
 
-.phoneInput input {
-  inset: unset;
-  bottom: var(--padding-block);
+.phoneInput[aria-disabled="true"] * {
+  pointer-events: none;
+  user-select: none;
+  cursor: revert;
+}
+
+.phoneCodeSelector {
+  position: relative;
+
+  color: var(--grey700);
+  cursor: pointer;
+
+  summary {
+    height: 100%;
+    padding-block: var(--padding-block);
+    padding-left: var(--padding-inline);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+
+  fieldset {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: max-content;
+    padding: 2px 0;
+    display: grid;
+    background-color: var(--white);
+    border: 1px solid var(--grey100);
+  }
+
+  legend {
+    display: none;
+  }
+
+  label {
+    padding: 2px 8px;
+    display: flex;
+    gap: 4px;
+    cursor: pointer;
+    color: var(--grey900);
+
+    &:hover {
+      background-color: var(--grey100);
+    }
+  }
+
+  input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    white-space: nowrap;
+    overflow: hidden;
+  }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { SelectHTMLAttributes, ChangeEvent } from "react";
 
 import styles from "./Select.module.css";
@@ -21,12 +21,6 @@ export default function Select({
   className,
   ...props
 }: Props) {
-  const [value, setValue] = useState("");
-  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    setValue(e.target.selectedOptions[0].innerText);
-    if (onChange) onChange(e);
-  };
-
   const color =
     (primary && "selectPrimary") || (secondary && "selectSecondary");
 
@@ -34,19 +28,35 @@ export default function Select({
     .filter((c) => !!c)
     .join(" ");
 
+  const [value, setValue] = useState(props.value ?? props.defaultValue);
+  const selectedOption = options.find(
+    (o) => o.value === (props.value ?? value)
+  );
+
+  useEffect(() => {
+    setValue(props.value);
+  }, [props.value]);
+
+  const handleChange = (e: ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.target.value);
+    if (onChange) onChange(e);
+  };
+
   return (
     <label className={classes}>
       <select {...props} data-value={value} onChange={handleChange}>
-        <option value="" hidden disabled selected>
+        <option value="" hidden disabled>
           {placeholder}
         </option>
         {options.map(({ value, label }) => (
-          <option value={value}>{label}</option>
+          <option key={value} value={value}>
+            {label}
+          </option>
         ))}
       </select>
 
       <span>{label}</span>
-      <output>{value || placeholder}</output>
+      <output>{selectedOption?.label || placeholder}</output>
     </label>
   );
 }
