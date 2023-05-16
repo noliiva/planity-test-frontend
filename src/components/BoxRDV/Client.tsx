@@ -66,7 +66,12 @@ export default function Client() {
 
           <PhoneInput name="phone" disabled={!client} />
 
-          <TextInput label="Email" name="email" disabled={!client} />
+          <TextInput
+            type="email"
+            label="Email"
+            name="email"
+            disabled={!client}
+          />
 
           {client && (
             <Button large onClick={handleReset}>
